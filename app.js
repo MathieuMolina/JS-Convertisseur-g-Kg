@@ -4,16 +4,18 @@ window.addEventListener("DOMContentLoaded", (event) => {
     const Kilogramme = document.getElementById('Kilogramme');
    
     Gramme.addEventListener('keyup', function(){
-      let g = parseFloat(this.value.trim());
-      let kg = parseFloat(g/change);
+      let g = this.value;
+      let kg = g/change;
       Kilogramme.value = kg.toFixed(2);
     });
    
     Kilogramme.addEventListener('keyup', function(){
-      let kg = parseFloat(this.value.trim());
-      let g = parseFloat(kg*change);
+      let kg = this.value;
+      let g = kg*change;
       Gramme.value = g.toFixed(2);
     });
 });
 
 
+
+//* toFixed permet de convertir un nombre en string ET de l'arrondire vers la décimale spécifiée.

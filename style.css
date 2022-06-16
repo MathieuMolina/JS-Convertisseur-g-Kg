@@ -1,19 +1,23 @@
 *{
     margin: 0;
     padding: 0;
+    color: rgb(131, 0, 253);
 }
 
 body{
-    background-color: rgb(225, 229, 230);
-    position: absolute;
+    background-color: rgb(240, 240, 240);
+}
+
+h1{
+    margin: 50px;
+    text-align: center;
 }
 
 .Grammes{
-    display:inline-block; 
+
     text-align:center;
 }
 
 .Kilogrammes{
-    display:inline-block; 
     text-align:center;
 }
