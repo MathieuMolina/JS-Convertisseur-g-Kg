@@ -1,21 +1,34 @@
-window.addEventListener("DOMContentLoaded", (event) => {
-    const change = 1000;
-    const Gramme = document.getElementById('Gramme');
-    const Kilogramme = document.getElementById('Kilogramme');
-   
-    Gramme.addEventListener('keyup', function(){
-      let g = this.value;
-      let kg = g/change;
-      Kilogramme.value = kg.toFixed(2);
-    });
-   
-    Kilogramme.addEventListener('keyup', function(){
-      let kg = this.value;
-      let g = kg*change;
-      Gramme.value = g.toFixed(2);
-    });
-});
+let grammes = document.getElementById("grammes")
+let deca = document.getElementById("decagrammes")
+let hecto = document.getElementById("hectogrammes")
+let kilo = document.getElementById("kilogrammes")
 
+grammes.addEventListener("input", function(){convPoids(this.id, this.value);});
+deca.addEventListener("input", function(){convPoids(this.id, this.value);});
+hecto.addEventListener("input", function(){convPoids(this.id, this.value);});
+kilo.addEventListener("input", function(){convPoids(this.id, this.value);});
 
+function convPoids(id, valeur){
+  if(id == "grammes"){
+      kilo.value = valeur/1000;
+      hecto.value = valeur/100;
+      deca.value = valeur/10;
+  }
 
-//* toFixed permet de convertir un nombre en string ET de l'arrondire vers la décimale spécifiée.
+  else if(id == "decagrammes"){
+    kilo.value = valeur/100;
+    hecto.value = valeur/10;
+    grammes.value = valeur*10;
+  }
+
+  else if(id == "hectogrammes"){
+    kilo.value = valeur/10;
+    deca.value = valeur*10;
+    grammes.value = valeur*100;
+  }  
+  else if(id == "kilogrammes"){
+    hecto.value = valeur*10;
+    deca.value = valeur*100;
+    grammes.value = valeur*1000;
+  }
+};

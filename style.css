@@ -13,11 +13,10 @@ h1{
     text-align: center;
 }
 
-.Grammes{
-
-    text-align:center;
+p{
+    margin: 10px;
 }
 
-.Kilogrammes{
-    text-align:center;
+div{
+    margin: 10px;
 }
